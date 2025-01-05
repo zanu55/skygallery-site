@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art-Inspired Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Art-Inspired Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="view-cart-btn">🛒 View Cart (<span id="cart-count">0</span>)</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products">
+            <h2>Our Collection</h2>
+            <!-- Sample Product 1 -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Art Print">
+                <h3>Art Print - Sunflowers</h3>
+                <p>$25.00</p>
+                <button data-product="Sunflowers Art Print" data-price="25.00">Add to Cart</button>
+            </div>
+            <!-- Sample Product 2 -->
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Art Book">
+                <h3>Art Book - Van Gogh</h3>
+                <p>$40.00</p>
+                <button data-product="Van Gogh Art Book" data-price="40.00">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Art-Inspired Store | Designed for art lovers.</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-cart" class="close">&times;</span>
+            <h3>Your Cart</h3>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total: $0.00</p>
+            <button id="clear-cart-btn">Clear Cart</button>
+            <button id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Show cart modal
+        document.getElementById('view-cart-btn').addEventListener('click', () => {
+            updateCartModal();
+            document.getElementById('cart-modal').classList.remove('hidden');
+        });
+
+        // Close cart modal
+        document.getElementById('close-cart').addEventListener('click', () => {
+            document.getElementById('cart-modal').classList.add('hidden');
+        });
+
+        function updateCartModal() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<li>Your cart is empty.</li>';
+                document.getElementById('total-price').textContent = 'Total: $0.00';
+                return;
+            }
+
+            let totalPrice = 0;
+            cart.forEach(product => {
+                const itemElement = document.createElement('li');
+                itemElement.innerHTML = `${product.name} - $${product.price.toFixed(2)} x ${product.quantity}
+                    <button onclick="removeFromCart('${product.name}')">Remove</button>`;
+                cartItemsContainer.appendChild(itemElement);
+                totalPrice += product.price * product.quantity;
+            });
+
+            document.getElementById('total-price').textContent = `Total: $${totalPrice.toFixed(2)}`;
+        }
+
+        // Clear cart button
+        document.getElementById('clear-cart-btn').addEventListener('click', () => {
+            clearCart();
+            updateCartModal();
+        });
+    </script>
+</body>
+</html>
