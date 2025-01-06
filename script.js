@@ -9,7 +9,7 @@ const productList = [
     {
         name: "Art Book - Van Gogh",
         price: 40.0,
-        image: "images/1-blues.JPG",
+        image: "images/3-blue1.JPG",
         alt: "Art Book - Van Gogh"
     },
     {
@@ -23,6 +23,25 @@ const productList = [
         price: 35.0,
         image: "images/3-blues.JPG",
         alt: "Recommended Art Print"
+    },
+    // New products
+    {
+        name: "Art Print - The Scream",
+        price: 45.0,
+        image: "images/hand-open.JPG",
+        alt: "Art Print - The Scream"
+    },
+    {
+        name: "Art Print - Mona Lisa",
+        price: 50.0,
+        image: "images/2-orange.JPG",
+        alt: "Art Print - Mona Lisa"
+    },
+    {
+        name: "Art Print - The Persistence of Memory",
+        price: 55.0,
+        image: "images/oranges.JPG",
+        alt: "Art Print - The Persistence of Memory"
     }
 ];
 
@@ -38,6 +57,9 @@ productList.forEach((product) => {
         <button class="btn" data-product="${product.name}" data-price="${product.price}">Add to Cart</button>
     `;
     productsContainer.appendChild(productCard);
+
+    // Add animation class
+    setTimeout(() => productCard.classList.add('fade-in'), 100);
 });
 
 // Show/Hide Modal Functions
@@ -45,11 +67,13 @@ function showModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.classList.remove('hidden');
     modal.classList.add('show');
+    modal.classList.add('fade-in');
 }
 
 function hideModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.classList.remove('show');
+    modal.classList.remove('fade-in');
     setTimeout(() => modal.classList.add('hidden'), 300);
 }
 

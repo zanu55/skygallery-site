@@ -3,61 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Art-Inspired Store - A collection of art prints, books, and more for art lovers.">
-    <title>Art-Inspired Store | Home</title>
+    <meta name="description" content="Sky Gallery - Share the sweetness of Mongolia, a unique gift straight from the heart!">
+    <title>Sky Gallery Store | Discover Unique Art</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sky Gallery",
+        "url": "http://www.skygallery.com",
+        "description": "Explore unique collections inspired by timeless masterpieces."
+    }
+    </script>
 </head>
 <body>
     <!-- Header Section -->
-    <header>
+    <header style="background-color: #69a9e9;">
         <div class="container">
-            <h1>Art-Inspired Store</h1>
-            <nav aria-label="Main Navigation">
+            <h1>Sky Gallery</h1>
+            <nav aria-label="Main Navigation" class="nav">
                 <ul>
-                    <li><a href="#products">Shop</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#products" class="nav-link">Shop</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                     <li>
-                        <button id="view-cart-btn" aria-label="View Cart">🛒 View Cart (<span id="cart-count">0</span>)</button>
+                        <button id="view-cart-btn" aria-label="View Cart" class="nav-link">
+                            <span class="cart-icon">🛒</span> View Cart (<span id="cart-count">0</span>)
+                        </button>
                     </li>
                 </ul>
             </nav>
-            <div id="search-bar">
-                <input type="text" placeholder="Search for products..." id="search-input" aria-label="Search for products">
+            <div id="search-bar" class="search-bar">
+                <input type="text" placeholder="Search for products..." id="search-input" aria-label="Search for products" class="search-input">
+                <button id="search-btn" class="search-btn">Search</button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero">
+    <section id="hero" style="background-color: #a8d1fa; padding: 20px;">
         <div class="container">
             <div class="hero-content">
                 <h1>Discover Art You’ll Love</h1>
                 <p>Explore unique collections inspired by timeless masterpieces.</p>
-                <button onclick="window.location='#products'">Shop Now</button>
+                <button onclick="window.location='#products'" class="btn-primary">Shop Now</button>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section id="categories">
+    <section id="categories" style="background-color: #a4b2f3; padding: 20px;">
         <div class="container">
             <h2>Shop By Category</h2>
             <div class="category-grid">
                 <div class="category">
-                    <img src="images/1.JPG" alt="Jewelry" loading="lazy">
+                    <img src="images/1.JPG" alt="Jewelry - Timeless art-inspired jewelry pieces." loading="lazy">
                     <h3>Jewelry</h3>
                     <p>Timeless art-inspired jewelry pieces.</p>
                     <a href="#products">Shop Now</a>
                 </div>
                 <div class="category">
-                    <img src="images/2-orange.JPG" alt="Books" loading="lazy">
+                    <img src="images/1-blues.JPG" alt="Books - Curated books from renowned artists." loading="lazy">
                     <h3>Books</h3>
                     <p>Curated books from renowned artists.</p>
                     <a href="#products">Shop Now</a>
                 </div>
                 <div class="category">
-                    <img src="images/2-oranges.JPG" alt="Home Décor" loading="lazy">
+                    <img src="images/2-oranges.JPG" alt="Home Décor - Upgrade your space with exclusive decor." loading="lazy">
                     <h3>Home Décor</h3>
                     <p>Upgrade your space with exclusive decor.</p>
                     <a href="#products">Shop Now</a>
@@ -82,24 +94,24 @@
             <div class="container">
                 <h2>You May Also Like</h2>
                 <div class="grid">
-                    <!-- Products will be dynamically rendered here -->
+                    <!-- Recommended products will be dynamically rendered here -->
                 </div>
             </div>
         </section>
     </main>
 
     <!-- About Us Section -->
-    <section id="about">
+    <section id="about" style="background-color: #f8f9fa; padding: 20px;">
         <div class="container">
             <h2>About Us</h2>
-            <p>Welcome to Art-Inspired Store, your number one source for all things art.</p>
+            <p>Welcome to Sky Gallery, your number one source for all things art.</p>
             <p>Founded in 2023, Art-Inspired Store has come a long way from its beginnings.</p>
             <p>We now serve customers all over the world and are thrilled to turn our passion into a website.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" style="background-color: #ffffff; padding: 20px;">
         <div class="container">
             <h2>Contact Us</h2>
             <p>Email: <a href="mailto:support@artinspiredstore.com">support@artinspiredstore.com</a></p>
@@ -109,12 +121,12 @@
     </section>
 
     <!-- Footer Section -->
-    <footer>
+    <footer style="background-color: #343a40; color: white; padding: 20px;">
         <div class="container">
-            <p>&copy; 2023 Art-Inspired Store | Follow us:</p>
-            <a href="https://instagram.com">Instagram</a> |
-            <a href="https://twitter.com">Twitter</a> |
-            <a href="https://facebook.com">Facebook</a>
+            <p>&copy; 2025 Store | Follow us:</p>
+            <a href="https://instagram.com" style="color: white;">Instagram</a> |
+            <a href="https://twitter.com" style="color: white;">Twitter</a> |
+            <a href="https://facebook.com" style="color: white;">Facebook</a>
         </div>
     </footer>
 
