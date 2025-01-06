@@ -3,20 +3,26 @@ const productList = [
     {
         name: "Art Print - Sunflowers",
         price: 25.0,
-        image: "https://via.placeholder.com/300",
+        image: "images/3-blue.JPG",
         alt: "Art Print - Sunflowers"
     },
     {
         name: "Art Book - Van Gogh",
         price: 40.0,
-        image: "https://via.placeholder.com/300",
+        image: "images/1-blues.JPG",
         alt: "Art Book - Van Gogh"
     },
     {
         name: "Art Print - Starry Night",
         price: 30.0,
-        image: "https://via.placeholder.com/300",
+        image: "images/oranges.JPG",
         alt: "Art Print - Starry Night"
+    },
+    {
+        name: "Recommended Art Print",
+        price: 35.0,
+        image: "images/3-blues.JPG",
+        alt: "Recommended Art Print"
     }
 ];
 
@@ -26,7 +32,7 @@ productList.forEach((product) => {
     const productCard = document.createElement('article');
     productCard.classList.add('product', 'card');
     productCard.innerHTML = `
-        <img src="${product.image}" alt="${product.alt}">
+        <img src="${product.image}" alt="${product.alt}" loading="lazy" width="300" height="300">
         <h3>${product.name}</h3>
         <p>$${product.price.toFixed(2)}</p>
         <button class="btn" data-product="${product.name}" data-price="${product.price}">Add to Cart</button>
